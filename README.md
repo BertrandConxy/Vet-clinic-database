@@ -1,7 +1,32 @@
-# curriculum-databases-projects-template
+![](https://img.shields.io/badge/VetClinicDB-blue)
 
-> This template should be used for database related projects at Microverse.
-> Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
+# Vet Clinic app database
+
+> This is the database for the vet clinic app which is composed of relational SQL data. There are different tables containing various information for example the animals table contains information about the animals in the clinic.
+
+# Screenshoot
+
+![vet-clinic](https://user-images.githubusercontent.com/90222110/160446531-4ec2d9ae-1806-4af8-8039-3801b222bfbe.png)
+
+# Live Demo
+> Not yet deployed
+
+## Built With
+
+- Major languages (SQL)
+
+- Frameworks / Libraries
+  ```bash
+  No Frameworks
+  ```
+
+- Technologies used 
+  
+  ``` bash
+  - Postgre(RDBMS)
+  - Git(version control)
+  - pg Admin 4 (GUI)
+  ```
 
 
 ## Getting Started
@@ -15,19 +40,18 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 ## Authors
 
-👤 **Author1**
+👤 **Bertrand Mutangana Ishimwe**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
+- GitHub: [@BertrandConxy](https://github.com/BertrandConxy)
+- Twitter: [@Bconxy](https://twitter.com/BertrandMutanga)
+- LinkedIn: [Bertrand Mutangana Ishimwe](https://www.linkedin.com/in/bertrandmutangana)
 
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/BertrandConxy/Vet-clinic-database/issues).
 
 ## Show your support
 
