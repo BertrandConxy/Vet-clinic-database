@@ -55,3 +55,19 @@ BEGIN;
 DELETE from animals;
 ROLLBACK;
 SELECT * from animals;
+
+-- transaction to delete and update animals whose weight is negative to positive
+BEGIN;
+DELETE from animamls
+WHERE date_of_birth > '2022-01-01';
+SAVEPOINT sp1;
+UPDATE animals
+SET weight_kg = weight_kg * -1;
+ROLLBACK TO sp1;
+UPDATE animals
+SET weight_kg = weight_kg * -1
+WHERE weight_kg < 0;
+COMMIT;
+
+
+-- Querries to answer various questions
