@@ -26,3 +26,32 @@ SELECT * FROM animals WHERE name NOT IN ('Gabumon');
 --  Find all animals with weight between 10.4kg and 17.3 kg(extremities included)
 
 SELECT * FROM animals WHERE weight_kg >= 10.4 AND weight_kg <= 17.3;
+
+
+-- PROJECT 2 QUERRIES
+
+-- transaction to set the species column to unspecified, verify the change and then roll back to undo the instruction made
+
+BEGIN;
+UPDATE animals
+SET species = 'unspecified';
+SELECT * FROM animals;
+ROLLBACK;
+SELECT * FROM animals;
+
+-- transaction to set species column to digimon and pokemon, commit the changes, delete all the records and then roll back
+
+BEGIN;
+UPDATE animals
+SET species = 'digimon'
+WHERE name LIKE '%mon';
+UPDATE animals
+SET species = 'pokemon'
+WHERE species IS NULL;
+COMMIT;
+SELECT * FROM animals;
+
+BEGIN;
+DELETE from animals;
+ROLLBACK;
+SELECT * from animals;
