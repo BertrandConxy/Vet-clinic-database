@@ -71,3 +71,26 @@ COMMIT;
 
 
 -- Querries to answer various questions
+
+-- how many animals are there?
+SELECT COUNT(*) FROM animals;
+
+-- how many animals have never trie to escape?
+SELECT COUNT(escape_attempts) FROM animals
+WHERE escape_attempts = 0;
+
+-- what is the average weight of animals?
+SELECT AVG(weight_kg) from animals;
+
+-- who escapes the most, neutered or non-neutered animals?--it is neutered animals
+SELECT neutered, SUM(escape_attempts) from animals
+GROUP BY neutered;
+
+-- what is the minimum weight of each type of animal?
+SELECT species, MIN(weight_kg), MAX(weight_kg) from animals
+GROUP BY species;
+
+-- What is the average number of escape attempts per animal type of those born between 1990 and 2000?
+SELECT species, AVG(escape_attempts) from animals
+WHERE date_of_birth >= '1990-01-01' and date_of_birth <= '2000-12-31'
+GROUP BY species;
