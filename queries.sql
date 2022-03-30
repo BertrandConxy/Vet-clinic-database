@@ -134,3 +134,6 @@ SELECT O.full_name, COUNT(A.name) as total_owned from owners O
 left JOIN animals A ON A.owner_id = O.id
 GROUP BY O.full_name
 ORDER BY COUNT(A.name) DESC;
+
+-- PROJECT 4
+
