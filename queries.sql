@@ -137,3 +137,54 @@ ORDER BY COUNT(A.name) DESC;
 
 -- PROJECT 4
 
+-- Who was the last name visited by William Tatcher?
+SELECT A.name, MAX(visit_date) as last_date_visited from animals A
+JOIN visits ON A.name = visits.animal_name
+JOIN vets on vets.name = visits.vet_name
+WHERE vets.name = 'William Tatcher'
+GROUP BY A.name
+ORDER BY last_date_visited DESC
+limit 1;
+
+-- how many different animals did Stephanie see?
+SELECT COUNT(DISTINCT A.name) as sum_visited from animals A
+JOIN visits on A.name = visits.animal_name
+JOIN vets on vets.name = visits.vet_name
+WHERE vets.name = 'Stephanie Mendez';
+
+-- list all vets and their specialities
+
+SELECT V.name, S.name as speciality from vets V
+left JOIN specializations C on V.name = C.vet_name
+left JOIN species S ON S.name = C.species_name;
+
+-- list of animals visited Stephanie between april 2020 and august 2020
+SELECT A.name AS animal_names from animals A
+JOIN visits ON A.name = visits.animal_name
+JOIN vets ON vets.name = visits.vet_name
+WHERE vets.name = 'Stephanie Mendez' AND visits.visit_date BETWEEN '2020-04-01' AND '2020-08-30';
+
+-- animal which has most visits to the vets
+SELECT A.name, COUNT(A.name) as visit_times FROM animals A
+JOIN visits V ON A.name = V.animal_name
+JOIN vets ON vets.name = V.vet_name
+GROUP BY A.name
+ORDER BY visit_times DESC
+limit 1;
+
+-- who was Maisy Smith first visit?
+SELECT A.name, MAX(visit_date) as first_visit_date from animals A
+JOIN visits V ON A.name = V.animal_name
+JOIN vets on vets.name = V.vet_name
+WHERE vets.name = 'Maisy Smith'
+GROUP BY A.name
+ORDER BY first_visit_date ASC
+limit 1;
+
+-- details for most recent visit
+SELECT A.name AS animal_name, A.date_of_birth, A.neutered, A.escape_attempts,V.name AS vet_name, V.age, V.date_of_graduation, MAX(visit_date) as date_visited FROM animals A
+JOIN visits ON A.name = visits.animal_name
+JOIN vets V ON V.name = visits.vet_name
+GROUP BY A.name, A.date_of_birth, A.neutered, A.escape_attempts,V.name, V.age, V.date_of_graduation
+ORDER BY date_visited DESC
+limit 1;
