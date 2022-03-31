@@ -188,3 +188,18 @@ JOIN vets V ON V.name = visits.vet_name
 GROUP BY A.name, A.date_of_birth, A.neutered, A.escape_attempts,V.name, V.age, V.date_of_graduation
 ORDER BY date_visited DESC
 limit 1;
+
+-- how many visits made by the vet who didn't specialize in any type
+SELECT V.name AS vet_name, COUNT(visits.animal_name) AS number_of_visits from vets V
+left JOIN specializations C ON V.name = C.vet_name
+left JOIN visits ON visits.vet_name = V.name
+WHERE C.species_name IS NULL
+GROUP BY V.name, C.species_name;
+
+-- What specialty should Maisy specialise in?
+SELECT COUNT(A.name) AS animal_visited, S.name as animal_type FROM animals A
+JOIN visits ON A.name = visits.animal_name
+JOIN species S ON S.id = A.species_id
+WHERE visits.vet_name = 'Maisy Smith'
+GROUP BY S.name, visits.vet_name
+ORDER BY COUNT(A.name) DESC;
