@@ -48,3 +48,42 @@ ADD owner_id INT;
 ALTER TABLE animals
 ADD FOREIGN KEY (owner_id) REFERENCES owners(id);
 
+-- PROJECT 4
+
+-- Create table named vets
+CREATE TABLE vets (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(255),
+    age INT,
+    date_of_graduation DATE,
+    PRIMARY KEY (id)
+);
+
+-- Create a join table between vets and species tables and name it specializations
+
+ALTER TABLE vets
+add UNIQUE (name);
+ALTER TABLE species
+ADD UNIQUE (name);
+CREATE TABLE specializations (
+    id int GENERATED ALWAYS AS IDENTITY,
+    vet_name varchar(255),
+    species_name varchar(100),
+    FOREIGN KEY (vet_name) REFERENCES vets (name),
+    FOREIGN KEY (species_name) REFERENCES species (name),
+    PRIMARY KEY (id)
+);
+
+-- Create a join table between vets and animals table and name it visits
+ALTER TABLE animals
+add UNIQUE (name);
+CREATE TABLE visits (
+    id int GENERATED ALWAYS AS IDENTITY,
+    animal_name varchar(100),
+    vet_name varchar(255),
+    visit_date DATE,
+    FOREIGN KEY (animal_name) REFERENCES animals(name),
+    FOREIGN KEY (vet_name) REFERENCES vets (name),
+    PRIMARY KEY (id)
+);
+

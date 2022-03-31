@@ -75,3 +75,29 @@ set owner_id = (
     SELECT id from owners WHERE full_name = 'Dean Winchester'
 )
 WHERE name IN ('Angemon', 'Boarmon');
+
+-- PROJECT 4
+
+-- Insert data into the vets table
+
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('William Tatcher', 45, '2000-04-23');
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('Maisy Smith', 26, '2019-01-17');
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('Stephanie Mendez', 64, '1981-05-04');
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('Jack Harkness', 38, '2008-06-08');
+
+-- Insert data into specializations table
+INSERT INTO specializations (vet_name, species_name) VALUES ('William Tatcher', 'Pokemon');
+INSERT INTO specializations (vet_name, species_name) VALUES ('Stephanie Mendez', 'Digimon');
+INSERT INTO specializations (vet_name, species_name) VALUES ('Stephanie Mendez', 'Pokemon');
+INSERT INTO specializations (vet_name, species_name) VALUES ('Jack Harkness', 'Digimon');
+
+-- Insert data into visits table
+INSERT INTO visits (animal_name, vet_name, visit_date) VALUES ('Agumon', 'William Tatcher', '2020-05-24'), ('Agumon', 'Stephanie Mendez', '2020-07-22'), ('Gabumon', 'Jack Harkness', '2021-02-02'), ('Pikachu', 'Maisy Smith', '2020-01-05'), ('Pikachu', 'Maisy Smith', '2020-03-08'), ('Pikachu', 'Maisy Smith', '2020-05-14');
+INSERT INTO visits (animal_name, vet_name, visit_date) VALUES ('Devimon', 'Stephanie Mendez', '2021-05-04'), ('Charmander', 'Jack Harkness', '2021-02-24'), ('Plantmon', 'Maisy Smith', '2019-21-12'), ('Plantmon', 'William Tatcher', '2020-08-10'), ('Plantmon', 'Maisy Smith', '2021-04-07'), ('Squirtle', 'Stephanie Mendez', '2019-09-21');
+INSERT INTO visits (animal_name, vet_name, visit_date) VALUES ('Angemon', 'Jack Harkness', '2020-10-03'), ('Angemon', 'Jack Harkness', '2020-11-04'), ('Boarmon', 'Maisy Smith', '2019-01-24'), ('Boarmon', 'Maisy Smith', '2019-05-15'), ('Boarmon', 'Maisy Smith', '2020-02-27'), ('Boarmon', 'Maisy Smith', '2020-08-03');
+INSERT INTO visits (animal_name, vet_name, visit_date) VALUES ('Blossom', 'Stephanie Mendez', '2020-05-24'), ('Blossom', 'William Tatcher', '2021-01-11');
+
+
+
+
+
