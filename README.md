@@ -6,7 +6,7 @@
 
 # Screenshoot
 
-![vet-clinic-2](https://user-images.githubusercontent.com/90222110/160631504-fd9af9fd-7c89-441f-adeb-d0ca4443a49e.png)
+![vet_clinic ERD](https://user-images.githubusercontent.com/90222110/161775883-75ee23ed-c353-47c4-80b8-7f4bdff4a699.png)
 
 # Live Demo
 > Not yet deployed
